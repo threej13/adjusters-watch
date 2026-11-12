@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Adjusters' Watch helps homeowners document insurance claim concerns and prepare regulatory complaints. Schedule a free consultation.">
   <title>Adjusters' Watch | Insurance Consumer Advocacy</title>
+
   <style>
     :root {
       --green: #183d35;
@@ -17,9 +18,13 @@
       --border: #dddcd4;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -35,7 +40,9 @@
       font-weight: normal;
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+    }
 
     .container {
       width: min(1120px, 92%);
@@ -87,11 +94,13 @@
       font-weight: bold;
     }
 
-    nav a:hover { color: var(--gold); }
+    nav a:hover {
+      color: var(--gold);
+    }
 
     .btn {
       display: inline-block;
-      padding: 14px 24px;
+      padding: 13px 23px;
       border-radius: 3px;
       background: var(--gold);
       color: #172c28;
@@ -100,14 +109,11 @@
       border: none;
       cursor: pointer;
       font-size: 15px;
+      transition: background .2s ease;
     }
 
-    .btn:hover { background: #c8ac79; }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      border: 1px solid var(--gold);
+    .btn:hover {
+      background: #c8ac79;
     }
 
     .hero {
@@ -137,7 +143,9 @@
       margin-bottom: 30px;
     }
 
-    section { padding: 85px 0; }
+    section {
+      padding: 85px 0;
+    }
 
     .section-title {
       font-size: clamp(32px, 4vw, 46px);
@@ -151,9 +159,13 @@
       text-align: center;
     }
 
-    .intro p { font-size: 18px; }
+    .intro p {
+      font-size: 18px;
+    }
 
-    .white { background: white; }
+    .white {
+      background: white;
+    }
 
     .grid {
       display: grid;
@@ -184,7 +196,9 @@
       margin: auto;
     }
 
-    .story p { font-size: 17px; }
+    .story p {
+      font-size: 17px;
+    }
 
     .highlight {
       border-left: 4px solid var(--gold);
@@ -200,50 +214,150 @@
       color: white;
     }
 
-    .dark-section .section-title { color: white; }
-
-    .dark-section p { color: #e0e7e2; }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-top: 35px;
+    .dark-section .section-title {
+      color: white;
     }
 
-    .form-box {
+    .dark-section p {
+      color: #e0e7e2;
+    }
+
+    /* CONSULTATION SECTION */
+
+    #consultation {
+      padding: 65px 0;
+    }
+
+    #consultation .consultation-intro {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    #consultation .section-title {
+      margin-bottom: 14px;
+    }
+
+    #consultation .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    #consultation .contact-panel {
+      background: #21483e;
+      border: 1px solid #47685d;
+      padding: 28px;
+      border-radius: 4px;
+    }
+
+    #consultation .contact-panel h3 {
+      margin: 0 0 12px;
+      font-size: 25px;
+      color: white;
+    }
+
+    #consultation .contact-panel p {
+      margin: 12px 0;
+      font-size: 15px;
+    }
+
+    #consultation .contact-panel a:not(.btn) {
+      color: #f0dbb1;
+      overflow-wrap: anywhere;
+    }
+
+    #consultation .contact-panel .btn {
+      margin-top: 14px;
+    }
+
+    #consultation .form-box {
       background: white;
       color: var(--dark);
-      padding: 35px;
+      padding: 28px;
       border: 1px solid var(--border);
+      border-radius: 4px;
     }
 
-    label {
-      display: block;
-      margin: 16px 0 6px;
+    #consultation .form-box h3 {
+      font-size: 27px;
+      margin: 0 0 8px;
+    }
+
+    #consultation .form-box > p {
+      color: var(--gray);
+      margin: 0 0 18px;
       font-size: 14px;
+    }
+
+    #consultation .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 16px;
+    }
+
+    #consultation .field {
+      min-width: 0;
+    }
+
+    #consultation .field.full {
+      grid-column: 1 / -1;
+    }
+
+    #consultation label {
+      display: block;
+      margin: 0 0 5px;
+      font-size: 13px;
       font-weight: bold;
     }
 
-    input, textarea {
+    #consultation input,
+    #consultation textarea {
       display: block;
       width: 100%;
-      padding: 13px;
+      padding: 10px 12px;
       border: 1px solid #c6ccc6;
-      background: #fff;
+      background: white;
+      color: var(--dark);
       font: inherit;
+      font-size: 14px;
       border-radius: 2px;
     }
 
-    textarea {
-      min-height: 140px;
+    #consultation input {
+      height: 43px;
+    }
+
+    #consultation textarea {
+      min-height: 90px;
       resize: vertical;
     }
 
-    .notice {
-      font-size: 13px;
+    #consultation #story {
+      min-height: 125px;
+    }
+
+    #consultation input:focus,
+    #consultation textarea:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 1px;
+    }
+
+    #consultation .submit-btn {
+      margin-top: 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    #consultation .notice {
+      font-size: 12px;
       color: var(--gray);
-      margin-top: 15px;
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+
+    #consultation #formMessage {
+      font-weight: bold;
     }
 
     footer {
@@ -252,7 +366,9 @@
       padding: 45px 0;
     }
 
-    footer a { color: #e4d0a8; }
+    footer a {
+      color: #e4d0a8;
+    }
 
     .footer-grid {
       display: flex;
@@ -261,7 +377,9 @@
       flex-wrap: wrap;
     }
 
-    .footer-grid p { margin: 7px 0; }
+    .footer-grid p {
+      margin: 7px 0;
+    }
 
     .footer-bottom {
       border-top: 1px solid #355048;
@@ -271,14 +389,45 @@
       color: #c5d0ca;
     }
 
-    @media (max-width: 760px) {
-      nav { display: none; }
-      .hero { padding: 75px 0; }
-      .grid, .contact-grid {
+    @media (max-width: 900px) {
+      #consultation .contact-grid {
         grid-template-columns: 1fr;
       }
-      section { padding: 60px 0; }
-      .brand { font-size: 20px; }
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .brand {
+        font-size: 20px;
+      }
+
+      #consultation .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #consultation .field.full {
+        grid-column: auto;
+      }
+
+      #consultation .contact-panel,
+      #consultation .form-box {
+        padding: 22px;
+      }
     }
   </style>
 </head>
@@ -288,14 +437,20 @@
 <header>
   <div class="container nav">
     <a href="#home" class="brand">
-      <svg class="eye" viewBox="0 0 64 42"
-           fill="none" xmlns="http://www.w3.org/2000/svg"
+      <svg class="eye"
+           viewBox="0 0 64 42"
+           fill="none"
+           xmlns="http://www.w3.org/2000/svg"
            aria-hidden="true">
-        <path d="M3 21C11 9 21 4 32 4S53 9 61 21C53 33 43 38 32 38S11 33 3 21Z"
-              stroke="#B69A65" stroke-width="3"/>
+        <path
+          d="M3 21C11 9 21 4 32 4S53 9 61 21C53 33 43 38 32 38S11 33 3 21Z"
+          stroke="#B69A65"
+          stroke-width="3"/>
         <circle cx="32" cy="21" r="11"
-                stroke="#B69A65" stroke-width="3"/>
-        <circle cx="32" cy="21" r="5" fill="#183D35"/>
+                stroke="#B69A65"
+                stroke-width="3"/>
+        <circle cx="32" cy="21" r="5"
+                fill="#183D35"/>
       </svg>
       Adjusters' Watch
     </a>
@@ -313,9 +468,14 @@
 
 <section class="hero" id="home">
   <div class="container">
-    <div class="eyebrow">National Insurance Consumer Advocacy</div>
+    <div class="eyebrow">
+      National Insurance Consumer Advocacy
+    </div>
 
-    <h1>Insurance Companies Have Oversight. Policyholders Deserve Transparency.</h1>
+    <h1>
+      Insurance Companies Have Oversight.
+      Policyholders Deserve Transparency.
+    </h1>
 
     <p>
       Your experience deserves more than a generic complaint.
@@ -333,6 +493,7 @@
 <section class="white">
   <div class="container intro">
     <div class="eyebrow">Why Documentation Matters</div>
+
     <h2 class="section-title">
       Filing a Complaint Is Only the Beginning.
     </h2>
@@ -362,7 +523,10 @@
 <section id="story">
   <div class="container story">
     <div class="eyebrow">Our Story</div>
-    <h2 class="section-title">Why We Created Adjusters' Watch</h2>
+
+    <h2 class="section-title">
+      Why We Created Adjusters' Watch
+    </h2>
 
     <p>
       Adjusters' Watch was created through experience working
@@ -404,6 +568,7 @@
   <div class="container">
     <div class="intro">
       <div class="eyebrow">Our Mission</div>
+
       <h2 class="section-title">
         Turning Consumer Experiences Into Meaningful Records
       </h2>
@@ -453,7 +618,11 @@
   <div class="container">
     <div class="intro">
       <div class="eyebrow">Our Process</div>
-      <h2 class="section-title">How We Help Homeowners</h2>
+
+      <h2 class="section-title">
+        How We Help Homeowners
+      </h2>
+
       <p>
         We believe insurance accountability begins with
         a clear, accurate, and properly documented record.
@@ -502,98 +671,140 @@
 
 <section class="dark-section" id="consultation">
   <div class="container">
+
     <div class="eyebrow">Get Started</div>
+
     <h2 class="section-title">
       Your Insurance Claim Deserves a Closer Look.
     </h2>
 
-    <p>
-      Schedule a free, no-obligation consultation with our team.
-      Tell us what happened and we'll discuss how we may
-      be able to assist you.
+    <p class="consultation-intro">
+      Schedule a free, no-obligation consultation.
+      Tell us about your experience and our team
+      will discuss how we may be able to assist.
     </p>
 
     <div class="contact-grid">
-      <div>
-        <h3>Contact Adjusters' Watch</h3>
+
+      <div class="contact-panel">
+        <h3>Speak With Our Team</h3>
 
         <p>
-          <strong>Phone:</strong><br>
-          <a href="tel:+16026611225">(602) 661-1225</a>
+          Have questions about your insurance claim?
+          We're here to listen and help you understand
+          your options.
         </p>
 
         <p>
-          <strong>Email:</strong><br>
+          <strong>Phone</strong><br>
+          <a href="tel:+16026611225">
+            (602) 661-1225
+          </a>
+        </p>
+
+        <p>
+          <strong>Email</strong><br>
           <a href="mailto:doi@adjusterwatch.com">
             doi@adjusterwatch.com
           </a>
         </p>
 
-        <p>
-          We assist homeowners with understanding the
-          regulatory complaint process and organizing
-          their insurance claim concerns.
-        </p>
-
         <a class="btn" href="tel:+16026611225">
-          Call for a Free Consultation
+          Call Our Team
         </a>
+
+        <p style="font-size:13px; margin-top:20px;">
+          Free consultation. No obligation.
+        </p>
       </div>
 
       <div class="form-box">
-        <h3>Tell Us About Your Experience</h3>
+        <h3>Request a Free Consultation</h3>
 
         <p>
-          Complete the information below to prepare
-          for your consultation.
+          Tell us a little about your situation.
         </p>
 
         <form id="consultationForm">
-          <label for="name">Full Name</label>
-          <input id="name" name="name" type="text"
-                 autocomplete="name" required>
+          <div class="form-grid">
 
-          <label for="email">Email Address</label>
-          <input id="email" name="email" type="email"
-                 autocomplete="email" required>
+            <div class="field">
+              <label for="name">Full Name</label>
+              <input id="name" name="name"
+                     type="text" autocomplete="name"
+                     required>
+            </div>
 
-          <label for="phone">Phone Number</label>
-          <input id="phone" name="phone" type="tel"
-                 autocomplete="tel" required>
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input id="email" name="email"
+                     type="email" autocomplete="email"
+                     required>
+            </div>
 
-          <label for="state">State Where the Loss Occurred</label>
-          <input id="state" name="state" type="text" required>
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input id="phone" name="phone"
+                     type="tel" autocomplete="tel"
+                     required>
+            </div>
 
-          <label for="insurance">Insurance Company</label>
-          <input id="insurance" name="insurance"
-                 type="text" required>
+            <div class="field">
+              <label for="state">
+                State Where Loss Occurred
+              </label>
+              <input id="state" name="state"
+                     type="text" required>
+            </div>
 
-          <label for="claimType">Type of Insurance Claim</label>
-          <input id="claimType" name="claimType"
-                 type="text" required>
+            <div class="field">
+              <label for="insurance">
+                Insurance Company
+              </label>
+              <input id="insurance" name="insurance"
+                     type="text" required>
+            </div>
 
-          <label for="concern">Primary Concern</label>
-          <textarea id="concern" name="concern"
-                    required></textarea>
+            <div class="field">
+              <label for="claimType">
+                Type of Insurance Claim
+              </label>
+              <input id="claimType" name="claimType"
+                     type="text" required>
+            </div>
 
-          <label for="story">What Happened?</label>
-          <textarea id="story" name="story"
-                    required></textarea>
+            <div class="field full">
+              <label for="concern">
+                What Is Your Primary Concern?
+              </label>
+              <textarea id="concern" name="concern"
+                        required></textarea>
+            </div>
 
-          <p class="notice">
-            This form is currently a demonstration and does
-            not submit or store information. Please contact
-            us directly by phone or email to request
-            a consultation. Do not enter sensitive
-            claim information into this demonstration.
-          </p>
+            <div class="field full">
+              <label for="story">
+                Tell Us What Happened
+              </label>
+              <textarea id="story" name="story"
+                        required></textarea>
+            </div>
 
-          <button class="btn" type="submit">
-            Request Consultation (Demo)
+          </div>
+
+          <button class="btn submit-btn" type="submit">
+            Request Free Consultation
           </button>
 
           <p id="formMessage" class="notice"
              role="status" aria-live="polite"></p>
+
+          <p class="notice">
+            Online consultation requests are not yet enabled.
+            Please contact us by phone or email.
+            Do not enter confidential claim information
+            into this form.
+          </p>
+
         </form>
       </div>
     </div>
@@ -603,6 +814,7 @@
 <section class="white">
   <div class="container story">
     <div class="eyebrow">Service Information</div>
+
     <h2 class="section-title">
       Independent Consumer Complaint Assistance
     </h2>
@@ -645,16 +857,20 @@
     <div class="footer-grid">
       <div>
         <h3>Adjusters' Watch</h3>
-        <p>Insurance Transparency & Consumer Advocacy</p>
+        <p>
+          Insurance Transparency &amp; Consumer Advocacy
+        </p>
       </div>
 
       <div>
         <p><strong>Contact Us</strong></p>
+
         <p>
           <a href="tel:+16026611225">
             (602) 661-1225
           </a>
         </p>
+
         <p>
           <a href="mailto:doi@adjusterwatch.com">
             doi@adjusterwatch.com
@@ -664,8 +880,8 @@
     </div>
 
     <div class="footer-bottom">
-      &copy; <span id="year"></span> Adjusters' Watch.
-      All rights reserved.
+      &copy; <span id="year"></span>
+      Adjusters' Watch. All rights reserved.
       Independent consumer complaint assistance.
     </div>
   </div>
@@ -680,9 +896,10 @@
       event.preventDefault();
 
       document.getElementById("formMessage").textContent =
-        "This is a demonstration form. No information " +
-        "has been submitted. Please call (602) 661-1225 " +
-        "or email doi@adjusterwatch.com to schedule " +
+        "Online requests are not yet enabled. " +
+        "No information has been submitted. " +
+        "Please call (602) 661-1225 or email " +
+        "doi@adjusterwatch.com to schedule " +
         "your consultation.";
     });
 </script>
