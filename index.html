@@ -54,7 +54,7 @@ header {
   gap:12px;
   text-decoration:none;
   color:var(--green);
-  font: bold 23px Georgia,serif;
+  font:bold 23px Georgia,serif;
 }
 .eye { width:43px; height:30px; flex-shrink:0; }
 nav { display:flex; gap:22px; align-items:center; }
@@ -68,7 +68,7 @@ nav a:hover { color:var(--gold); }
   border-radius:3px;
   background:var(--gold);
   color:var(--dark);
-  font: bold 15px Arial,sans-serif;
+  font:bold 15px Arial,sans-serif;
   text-decoration:none;
   cursor:pointer;
 }
@@ -142,7 +142,7 @@ section { padding:85px 0; }
 .dark-section .section-title { color:white; }
 .dark-section p { color:#e0e7e2; }
 
-/* Compact professional consultation layout */
+/* Professional consultation layout */
 #consultation { padding:65px 0; }
 #consultation .section-title { margin-bottom:14px; }
 .consultation-intro {
@@ -558,9 +558,11 @@ footer a { color:#e4d0a8; }
              role="status" aria-live="polite"></p>
 
           <p class="notice">
-            Online consultation requests are not yet enabled.
-            Please contact us by phone or email.
-            Do not enter confidential claim information into this form.
+            Clicking the button opens your email application
+            with your answers prepared. Review the message
+            and click Send to submit your request.
+            Please do not include confidential documents,
+            policy numbers, or sensitive personal information.
           </p>
         </form>
       </div>
@@ -631,10 +633,43 @@ document.getElementById("year").textContent =
 document.getElementById("consultationForm")
   .addEventListener("submit", function(event) {
     event.preventDefault();
+
+    const getValue = (id) =>
+      document.getElementById(id).value.trim();
+
+    const subject = "Adjusters' Watch - Free Consultation Request";
+
+    const body = [
+      "NEW CONSULTATION REQUEST",
+      "",
+      "Full Name: " + getValue("name"),
+      "Email Address: " + getValue("email"),
+      "Phone Number: " + getValue("phone"),
+      "State Where Loss Occurred: " + getValue("state"),
+      "Insurance Company: " + getValue("insurance"),
+      "Type of Insurance Claim: " + getValue("claimType"),
+      "",
+      "PRIMARY CONCERN",
+      getValue("concern"),
+      "",
+      "WHAT HAPPENED",
+      getValue("storyDetails"),
+      "",
+      "Submitted from the Adjusters' Watch website."
+    ].join("\n");
+
+    const mailto =
+      "mailto:doi@adjusterwatch.com" +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
     document.getElementById("formMessage").textContent =
-      "Online requests are not yet enabled. No information " +
-      "has been submitted. Please call (602) 661-1225 or " +
-      "email doi@adjusterwatch.com to schedule your consultation.";
+      "Your email application should open with your " +
+      "consultation request prepared. Please review " +
+      "the email and click Send. Your request has " +
+      "not been submitted automatically.";
+
+    window.location.href = mailto;
   });
 </script>
 
